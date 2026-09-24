@@ -1,0 +1,5 @@
+Loaded grayscale image with shape: (240, 320)
+Saved images:
+- q4_task1_outputs/original_image.png
+- q4_task1_outputs/sobel_x_edges.png
+- q4_task1_outputs/sobel_y_edges.png
