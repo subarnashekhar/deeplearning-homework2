@@ -233,39 +233,6 @@ python3 Q2_Implement_RNN_For_Sentiment_Classification.py \
   --epochs 3
 ```
 
-### Expected runtime and speed suggestions
-
-On a laptop CPU, the default run normally takes approximately 2 to 10 minutes,
-depending on the processor, TensorFlow version, and whether the IMDB dataset
-must be downloaded first. The first run can take longer because the dataset is
-downloaded and cached. A GPU can reduce the training time substantially.
-
-To make the run faster, use fewer reviews, fewer epochs, a shorter sequence, or
-a smaller LSTM:
-
-```bash
-./run_Q2_Implement_RNN_For_Sentiment_Classification.sh \
-  --max-train-samples 5000 \
-  --max-test-samples 2000 \
-  --sequence-length 100 \
-  --lstm-units 32 \
-  --epochs 2
-```
-
-These settings run faster but may reduce classification quality. For a more
-complete experiment, use all reviews by setting both sample limits to `0`:
-
-```bash
-./run_Q2_Implement_RNN_For_Sentiment_Classification.sh \
-  --max-train-samples 0 \
-  --max-test-samples 0 \
-  --epochs 3
-```
-
-Useful Question 2 options include `--vocabulary-size`, `--sequence-length`,
-`--embedding-size`, `--lstm-units`, `--epochs`, `--batch-size`,
-`--max-train-samples`, and `--max-test-samples`.
-
 ## Question 3: Convolution Operations With Different Parameters
 
 This question demonstrates how stride and padding change the output of a 2-D
@@ -356,17 +323,6 @@ You can also execute the Python file directly in the foreground:
 ```bash
 python3 Q3_Convolution_Different_Stride_Padding.py
 ```
-
-### Expected runtime and speed suggestions
-
-Question 3 does not train a neural network and use only a 5x5 matrix, so it
-should finish in a few seconds on a laptop. The first run may take longer if
-TensorFlow needs to be installed. No reduced dataset is needed for this
-question because the input size is already fixed and very small.
-
-The main way to experiment with performance are to replace the small matrix
-with a larger image or batch. For the required assignment, the current code is
-already fast enough and reducing the input would change the question.
 
 ## Question 4 Task 1: Sobel Edge Detection
 
@@ -483,15 +439,6 @@ python3 Q4_Task1_Sobel_Edge_Detection.py \
   --output-dir q4_task1_outputs
 ```
 
-### Expected runtime and speed suggestions
-
-The included 320x240 sample image should finish in less than a few seconds on a
-laptop because Sobel filtering is a small image-processing operation and does
-not involve model training. The first run may take longer while OpenCV and
-NumPy are installed. For a faster experiment with a large image, resize it
-before filtering or use a smaller output image. The required sample run is
-already small enough that no additional speed optimization is necessary.
-
 ## Question 4 Task 2: Max Pooling and Average Pooling
 
 This task demonstrate two common CNN pooling operations using TensorFlow/Keras.
@@ -576,14 +523,6 @@ You can also run the Python file directly:
 ```bash
 python3 Q4_Task2_Pooling_Operations.py
 ```
-
-### Expected runtime and speed suggestions
-
-This example does not train a model and processes only a 4x4 matrix, so it
-should finish in a few seconds or less on a laptop. The first run can take
-longer if TensorFlow must be installed. There is no meaningful optimization
-needed for the required input size. For experiments with larger images or
-batches, reducing the image size or batch size can reduce memory and runtime.
 
 ## Question 5: Comparing CNN Architectures
 
